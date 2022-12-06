@@ -86,6 +86,7 @@ export const useBluetoothStatus = () => {
   const [isPending, setPending] = useState(true);
 
   useEffect(() => {
+    BluetoothStatus.state(); // ensure CBManagerDelegate is initialized
     const bluetoothEvent = new NativeEventEmitter(RNBluetoothManager);
     const subscription = bluetoothEvent.addListener(BT_STATUS_EVENT, state => {
       const nativeState = Platform.OS === "ios" ? state : state.status;
