@@ -127,7 +127,11 @@ public class RNBluetoothManagerModule extends ReactContextBaseJavaModule impleme
 
     @ReactMethod
     public void addListener(String eventName) {
-      // Keep: Required for RN built in Event Emitter Calls.
+        // set initial state on react native side
+        WritableMap params = Arguments.createMap();
+        String enabled = btAdapter != null && btAdapter.isEnabled() ? BT_STATUS_ON : BT_STATUS_OFF;
+        params.putString(BT_STATUS_PARAM, enabled);
+        sendEvent(reactContext, BT_STATUS_EVENT, params);
     }
 
     @ReactMethod
