@@ -30,12 +30,11 @@
   "author": "Juha Linnanen",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-native": "^0.66.0"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
     "@semantic-release/git": "^7.0.18",
-    "flow-bin": "^0.114.0",
     "semantic-release": "^15.14.0",
     "jest": "^24.9.0",
     "react-native": "^0.66.0"
